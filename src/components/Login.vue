@@ -1,11 +1,14 @@
 <template>
 
-  <form>
+  <form @submit.prevent="LoginAcc">
     <p>Login</p>
     <label>Email</label>
     <input type="email" v-model="email">
     <label>Password</label>
     <input type="password" v-model="password">
+    <div v-if="error">
+        <p>{{error}}</p>
+    </div>
     <button>Login</button>
     <div>Not a member?<span @click="SignUp">SignUp</span></div>
   </form>
@@ -13,6 +16,8 @@
 
 <script>
 import { ref } from 'vue'
+import useLogin from '../composables/useLogin'
+import {useRouter} from 'vue-router'
 export default {
     setup(props,context){
         let email=ref('');
@@ -21,8 +26,17 @@ export default {
             context.emit('switchAcc');
         }
 
+        //Login with authentication
+        let router=useRouter();
+        let {error,signIn}=useLogin();
+        let LoginAcc=async()=>{
+          let res=await signIn(email.value, password.value);
+            if(res){
+                router.push('/chatroom');
+            }
+        }
 
-        return {email, password, SignUp}
+        return {email, password, SignUp, error, LoginAcc}
     }
 }
 </script>
@@ -58,12 +72,12 @@ export default {
         border-radius: 5px;
         background: rgb(81, 228, 224);
     }
-    p{
+    form p{
         font-size: 30px;
         font-weight: bold;
         color: rgb(81, 228, 224);
     }
-    span{
+    form span{
         text-decoration: underline;
         color: rgb(81, 228, 224);
         margin-left: 5px;
