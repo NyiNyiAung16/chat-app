@@ -1,7 +1,7 @@
 <template>
     <nav class="Navbar">
     <div>
-        <p>Chat-App</p>
+        <p >Chat-App</p>
     </div>
     <div>
         <router-link to="/home">Home</router-link>
@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style>
+<style >
     .Navbar{
         display: flex;
         justify-content: space-between;
@@ -28,6 +28,7 @@ export default {
     .Navbar > div > p{
         font-size: 25px;
         color: aqua;
+        font-weight: bold;
     }
     nav a {
         color: #fff;
@@ -36,5 +37,14 @@ export default {
     }
     nav a.router-link-active:hover{
         color: rgb(41, 195, 215);
+    }
+    @media (max-width: 400px){
+        .Navbar > div > p{
+            font-size: 20px;
+            font-weight: none;
+        }
+        nav a {
+            font-size: 15px;
+        }
     }
 </style>

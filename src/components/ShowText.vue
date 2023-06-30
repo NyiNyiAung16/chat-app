@@ -20,4 +20,12 @@ export default {
         font-style: italic;
         font-weight: bold;
     }
+    @media (max-width: 400px) {
+      .text > p {
+        font-size: 15px;
+        font-weight: normal;
+        font-style: normal;
+        color: rgb(7, 199, 202);
+      }
+    }
 </style>

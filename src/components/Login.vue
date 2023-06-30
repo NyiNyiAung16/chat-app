@@ -45,7 +45,7 @@ export default {
     form{
         max-width: 500px;
         margin: 0 auto;
-        background: rgb(138, 138, 138);
+        background: linear-gradient(-45deg,rgb(16, 168, 56),rgb(12, 164, 175));
         padding:10px 20px;
         margin-top: 10%;
         border-radius: 10px;
@@ -62,7 +62,7 @@ export default {
         width: 100%;
         padding: 10px;
         border: none;
-        background: rgb(224, 252, 255);
+        background: rgb(190, 241, 247);
         border-radius: 5px;
         box-sizing: border-box;
     }
@@ -84,5 +84,13 @@ export default {
         color: rgb(81, 228, 224);
         margin-left: 5px;
         cursor: pointer;
+    }
+    @media (max-width:400px) {
+        form p{
+            font-size: 23px;
+        }
+        label{
+            font-size: 15px;
+        }
     }
 </style>

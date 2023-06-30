@@ -1,6 +1,6 @@
 <template>
  <div class="chatMain" ref="msgbox"> 
-    <div v-for="message in filterMsg" :key="message.id">
+    <div v-for="message in filterMsg" :key="message.id" class="userMessage">
         <p class="time">{{message.time}}</p>
         <span class="displayName">{{message.name}}</span>
         <span class="message">{{message.message}}</span>
@@ -82,5 +82,8 @@ export default {
     ::-webkit-scrollbar-thumb:hover{
          background: linear-gradient(rgb(19, 189, 93),rgb(47, 234, 209));
         border-radius: 15px;
+    }
+    .userMessage{
+        margin-bottom: 17px;
     }
 </style>
