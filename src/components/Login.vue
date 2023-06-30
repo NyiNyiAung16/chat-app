@@ -34,8 +34,8 @@ export default {
             if(res){
                 router.push('/chatroom');
             }
+            
         }
-
         return {email, password, SignUp, error, LoginAcc}
     }
 }
@@ -49,6 +49,7 @@ export default {
         padding:10px 20px;
         margin-top: 10%;
         border-radius: 10px;
+        text-align: center;
     }
     label{
         display: block;
@@ -71,6 +72,7 @@ export default {
         padding: 8px 15px;
         border-radius: 5px;
         background: rgb(81, 228, 224);
+        cursor: pointer;
     }
     form p{
         font-size: 30px;

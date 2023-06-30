@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Welcome from '../views/Welcome.vue'
 import Chatroom from '../views/Chatroom.vue'
 import { auth } from '@/firebase/config'
+import Home from '../views/Home.vue'
+import Fun from '../views/FunPage.vue'
 
 const routes = [
   {
@@ -29,7 +31,19 @@ const routes = [
         next('/')
       }
     }
+  },
+  {
+    path:'/home',
+    name:'Home',
+    component:Home
+  },
+  {
+    path:'/fun',
+    name:'Fun',
+    component:Fun
   }
+
+
 ]
 
 const router = createRouter({

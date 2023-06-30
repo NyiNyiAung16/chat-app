@@ -12,6 +12,7 @@ import { ref } from 'vue'
 import useCollection from '../composables/useCollection'
 import getUser from '@/composables/getUser'
 import {timestamp} from '../firebase/config'
+
 export default {
     setup(){
         let message=ref('');
@@ -57,5 +58,6 @@ export default {
         color: aqua;
         padding: 0px 5px;
         border-radius: 30%;
+        cursor: pointer;
     }
 </style>

@@ -1,6 +1,16 @@
 <template>
+  <MainNav></MainNav>
   <router-view/>
 </template>
+
+<script>
+import MainNav from './components/MainNav'
+export default {
+  components: { MainNav },
+
+}
+
+</script>
 
 <style>
 body{

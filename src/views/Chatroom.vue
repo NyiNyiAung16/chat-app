@@ -2,21 +2,24 @@
   <div v-if="user">
     <Navbar></Navbar>
   </div>
-  <Chat></Chat>
+  <ChatMessage></ChatMessage>
   <SendMsg></SendMsg>
 </template>
 
 <script>
+import MainNav from '../components/MainNav'
+import ChatMessage from '../components/ChatMessage'
 import SendMsg from '../components/SendMsg'
-import Chat from '../components/Chat'
 import { ref, watch } from 'vue'
 import Navbar from '../components/Navbar'
 import {useRouter} from 'vue-router'
 import getUser from '../composables/getUser'
 export default {
   components: {
+    MainNav,
+    ChatMessage,
     SendMsg,
-    Chat, Navbar },
+     Navbar },
   setup(){
     let {user}=getUser();
     let router=useRouter();
